@@ -292,6 +292,12 @@
         margin-bottom: 4px;
       }
       .note p { margin: 0; }
+      .deck-intro {
+        margin-top: 18px;
+        color: var(--soft);
+        font-size: 16.5px;
+        line-height: 1.6;
+      }
 
       /* Output / deck */
       .deck-card {
@@ -394,6 +400,66 @@
       }
       footer .back-wrap { margin-bottom: 18px; }
 
+      /* Desktop layer: matches the home page's wide theme (900px and up).
+         The phone layout above is untouched. */
+      @media (min-width: 900px) {
+        main {
+          max-width: 1080px;
+          padding: 56px 40px 64px;
+        }
+        section { margin-top: 64px; }
+
+        /* Introduction runs horizontally: text on the left,
+           the meta chips stacked in a rail on the right. */
+        .hero {
+          margin-top: 48px;
+          display: grid;
+          grid-template-columns: minmax(0, 1fr) 250px;
+          column-gap: 56px;
+        }
+        .hero h1, .hero .sub { grid-column: 1 / -1; }
+        .hero .lead, .hero .line {
+          grid-column: 1;
+          max-width: none;
+        }
+        .hero .meta {
+          grid-column: 2;
+          grid-row: 3 / 5;
+          flex-direction: column;
+          align-items: flex-start;
+          align-content: start;
+          gap: 8px;
+        }
+
+        /* Story copy gets the wider measure. */
+        .story p { max-width: 46em; }
+
+        /* Scope cards two across. */
+        .scope { grid-template-columns: 1fr 1fr; }
+
+        /* Findings stretch across the wider page. */
+        .findings li { max-width: 52em; }
+
+        /* The output introduction sits beside the deck download. */
+        .output-top {
+          display: grid;
+          grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+          gap: 28px;
+          align-items: stretch;
+        }
+        .output-intro .deck-intro { margin-bottom: 0; }
+        .deck-card { height: 100%; align-items: flex-start; }
+
+        /* All 10 slide thumbnails as one grid across the page:
+           five across, two rows. */
+        .slides {
+          grid-template-columns: repeat(5, 1fr);
+          gap: 12px;
+          margin-top: 28px;
+        }
+        .slides li:first-child { grid-column: auto; }
+      }
+
       @media (max-width: 420px) {
         main { padding: 36px 20px 44px; }
         section { margin-top: 48px; }
@@ -483,19 +549,23 @@
       <!-- The output -->
       <section aria-label="The output">
         <h2>The output</h2>
-        <div class="note">
-          <strong>A note on the data</strong>
-          <p>This project was built from a fictional sample dataset, plus a live audit of the brand&rsquo;s public product pages on HomeDepot.ca.</p>
-        </div>
-        <p style="margin-top:18px; color: var(--soft); font-size: 16.5px; line-height: 1.6;">The full case study is a 10-slide deck: the story of the portfolio, the SKU-by-SKU read, and the 12-month plan. Every slide is below, and the deck itself is one click away.</p>
-        <div class="deck-card">
-          <div class="icon" aria-hidden="true">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 15v3"/><path d="M12 10v8"/><path d="M17 6v12"/></svg>
+        <div class="output-top">
+          <div class="output-intro">
+            <div class="note">
+              <strong>A note on the data</strong>
+              <p>This project was built from a fictional sample dataset, plus a live audit of the brand&rsquo;s public product pages on HomeDepot.ca.</p>
+            </div>
+            <p class="deck-intro">The full case study is a 10-slide deck: the story of the portfolio, the SKU-by-SKU read, and the 12-month plan. Every slide is below, and the deck itself is one click away.</p>
           </div>
-          <div class="body">
-            <div class="t">Digital Shelf Analysis, case study deck</div>
-            <p class="d">10 slides, PDF. Gardner Bender on HomeDepot.ca: what the averages hid, where the money sits, and what to fix first.</p>
-            <a id="deck-link" href="https://abid-memon.github.io/digital-shelf-analysis.pdf" download="digital-shelf-analysis.pdf">Read the deck (PDF) <span class="go"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></span></a>
+          <div class="deck-card">
+            <div class="icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 15v3"/><path d="M12 10v8"/><path d="M17 6v12"/></svg>
+            </div>
+            <div class="body">
+              <div class="t">Digital Shelf Analysis, case study deck</div>
+              <p class="d">10 slides, PDF. Gardner Bender on HomeDepot.ca: what the averages hid, where the money sits, and what to fix first.</p>
+              <a id="deck-link" href="https://abid-memon.github.io/digital-shelf-analysis.pdf" download="digital-shelf-analysis.pdf">Read the deck (PDF) <span class="go"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></span></a>
+            </div>
           </div>
         </div>
 
