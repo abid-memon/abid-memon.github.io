@@ -277,6 +277,58 @@
         section { margin-top: 40px; }
       }
 
+      /* Desktop layer (900px and wider): same page, laid out horizontally
+         to match the home page's desktop theme. The introduction sits in
+         the left column and the Outputs section with the deck download
+         sits beside it on the right; "What I did" runs full width below
+         with its steps two across. Below 900px nothing here applies and
+         the original single-column layout is unchanged. */
+      @media (min-width: 900px) {
+        .wrap {
+          max-width: 1080px;
+          padding: 36px 40px 84px;
+          display: grid;
+          grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
+          column-gap: 56px;
+        }
+        .wrap > .back-link {
+          grid-column: 1 / -1;
+          grid-row: 1;
+          justify-self: start;
+        }
+        .kicker { grid-column: 1; grid-row: 2; }
+        h1 { grid-column: 1; grid-row: 3; }
+        .lede { grid-column: 1; grid-row: 4; }
+        .byline { grid-column: 1; grid-row: 5; }
+        .rule { grid-column: 1; grid-row: 6; width: 100%; }
+        section[aria-labelledby="brief-heading"] {
+          grid-column: 1;
+          grid-row: 7;
+        }
+        section[aria-labelledby="outputs-heading"] {
+          grid-column: 2;
+          grid-row: 2 / 8;
+          align-self: start;
+          margin-top: 28px;
+        }
+        section[aria-labelledby="work-heading"] {
+          grid-column: 1 / -1;
+          grid-row: 8;
+        }
+        .work-list {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          column-gap: 48px;
+        }
+        .work-list li:nth-child(2) { border-top: none; padding-top: 6px; }
+        .output-top { flex-direction: column; }
+        .output-cta { align-self: flex-start; }
+        footer {
+          grid-column: 1 / -1;
+          grid-row: 9;
+        }
+      }
+
       @media (prefers-reduced-motion: reduce) {
         html { scroll-behavior: auto; }
       }
