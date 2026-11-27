@@ -1,0 +1,16 @@
+# Abid Memon
+
+> Abid Memon is a Research and Insights Specialist in Toronto. Practical by nature, creative by instinct, he works where they meet: marketing measurement, competitive intelligence, and audience insights.
+
+## Portfolio
+
+- [Home](https://abid-memon.github.io/): Portfolio, story, experience, and skills.
+- [Digital Shelf Analysis](https://abid-memon.github.io/digital-shelf-analysis.html): A personal project: twelve months of product listings on homedepot.ca, read the way a media plan is read.
+- [Interactive Performance Analytics Dashboard](https://abid-memon.github.io/interactive-performance-dashboard.html): An email-marketing dashboard built in Google Looker Studio, with filters, an engagement funnel, and campaign results.
+- [AI Integration in MarTech](https://abid-memon.github.io/ai-integration-in-martech.html): A guest lecture at George Brown College on using AI as a system, not a pile of tools.
+- [Pear Ring Market Study](https://abid-memon.github.io/pear-ring-market-study.html): A market study on an upcoming brand: its digital and traditional presence, consumer sentiment, and launch strategy.
+- [Covid Dashboards](https://abid-memon.github.io/covid-dashboards.html): Global and country-wise dashboards for publicly available Covid-19 data, built in Tableau.
+
+## About
+
+- [LinkedIn](https://www.linkedin.com/in/abid-memon/): Abid Memon's LinkedIn profile.
